@@ -77,6 +77,8 @@ type ClusterManager interface {
 	// UpdateTLSManager updates the tls manager which is used to cluster tls config
 	UpdateTLSManager(*v2.TLSConfig)
 
+	AppendHostWithConnection(clusterName string, h v2.Host, connection ClientConnection) error
+
 	// Destroy the cluster manager
 	Destroy()
 }
